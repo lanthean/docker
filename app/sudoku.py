@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 """
-# @Author   http://martinbortel.cz
-# @Contact  me@martinbortel.cz
+# @Author   martin.bortel@gmail.com
 # @Created
 #
 # @Package Sudoku via evolutionary algorithms
