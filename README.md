@@ -1,11 +1,14 @@
 ```
 ##
+# README.md
 # @Author	Martin Bortel <martin.bortel@gmail.com>
-# @Date		17/09/2020
+# @Date		09/09/2020
+# @Update	09/09/2020
 ##
 ```
 
-# docker
-Master branch of my docker trials
-
-*Note: Each branch is a separate project*
+# Sudoku
+Sudoku game generator based on evolutionary algorithms.  
+Output is html page with the posibility to be an interactive application (for playing sudoku game as well).  
+  
+  

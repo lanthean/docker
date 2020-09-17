@@ -1,0 +1,47 @@
+# use version 3 of the docker compose syntax
+version: '2'
+services:
+  # we named our first service 'web'
+  web:
+    # pass a hostname to the container (optinal)
+    hostname: sudoku.local
+    
+    # build a custom image 
+    build:
+      context: /data/sandbox/py/sudoku/
+      dockerfile: ./docker/sudoku.dockerfile
+    
+    # a name for easier reference
+    image: sudoku.local
+
+    # map host port 8080 to container port 80
+    ports:
+        - 52000:5000
+    
+    # volumes are like shared folders
+    # container will see your local code changes
+    volumes:
+      - ./app/:/var/www/html/
+    
+    # first load the 'db' service 
+    depends_on:
+      - db
+    
+    # make 'db' a known service/host inside of 'web'
+    # use this to make a mysql connection to host 'db'
+    links:
+      - db
+  
+  db:
+    image: mysql:5.7
+    ports:
+      - "32000:3306"
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/:ro
+
+    # the mysql image uses these to create database and users
+    environment: 
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: sudoku
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 1234

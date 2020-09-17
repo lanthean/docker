@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!--
+###
+# @html5
+# @author martin.bortel@gmail.com
+###
+-->
+<html>
+<head>
+
+</head>
+    <body>
+    	<h1>Sudoku game generator</h1>
+    	<p>List of tables in the database:</p>
+    	<ul>
+		{% for table in tables %}
+		    <li>{{ table }}</li>
+		{% endfor %}
+    	</ul>
+    </body>
+</html>
