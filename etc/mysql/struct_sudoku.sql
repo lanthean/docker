@@ -1,4 +1,4 @@
-create database `sudoku`;
-use `sudoku`;
-create table `gene`;
-create table `chromozome`;
+CREATE DATABASE sudoku;
+USE sudoku;
+CREATE TABLE gene;
+CREATE TABLE chromozome;
