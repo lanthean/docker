@@ -1,21 +1,21 @@
 version: "2"
 services:
-  app:
+  sudoku_app:
     build: ./app
     links:
-      - db
+      - sudoku_db
     ports:
       - "5000:5000"
   
-  db:
+  sudoku_db:
     image: mysql:5.7
     ports:
-      - "32000:3306"
+      - "3306:3306"
     volumes:
       - ./etc/mysql:/docker-entrypoint-initdb.d/:ro
     # the mysql image uses these to create database and users
     environment:
       MYSQL_ROOT_PASSWORD: 1234
       MYSQL_DATABASE: sudoku
-      MYSQL_USER: root
+      MYSQL_USER: sudoku
       MYSQL_PASSWORD: 1234

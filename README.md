@@ -3,7 +3,6 @@
 # README.md
 # @Author	Martin Bortel <martin.bortel@gmail.com>
 # @Date		09/09/2020
-# @Update	09/09/2020
 ##
 ```
 
